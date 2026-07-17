@@ -1,0 +1,67 @@
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Container, Eyebrow } from "@/components/section";
+import { QuoteForm } from "@/components/quote-form";
+import { company, regions } from "@/lib/site-data";
+
+export function Contact() {
+  return (
+    <section id="contact" className="bg-secondary/40 py-24 sm:py-32">
+      <Container className="grid gap-12 lg:grid-cols-5">
+        <div className="lg:col-span-2">
+          <Eyebrow>Get In Touch</Eyebrow>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-navy-950 sm:text-4xl">
+            Schedule your free estimate
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Tell us a bit about your building and we will get back to you with a fast,
+            no-obligation quote — most requests are answered the same business day.
+          </p>
+
+          <div className="mt-10 space-y-5">
+            <a href={company.phoneHref} className="flex items-center gap-3 text-brand-navy-950">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-navy-950/5 text-brand-navy-800">
+                <Phone className="size-4" />
+              </span>
+              <span className="font-medium">{company.phone}</span>
+            </a>
+            <a href={`mailto:${company.email}`} className="flex items-center gap-3 text-brand-navy-950">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-navy-950/5 text-brand-navy-800">
+                <Mail className="size-4" />
+              </span>
+              <span className="font-medium">{company.email}</span>
+            </a>
+            <div className="flex items-start gap-3 text-brand-navy-950">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-navy-950/5 text-brand-navy-800">
+                <MapPin className="size-4" />
+              </span>
+              <div className="text-sm">
+                {regions.map((region) => (
+                  <p key={region.name} className="font-medium">
+                    {region.name}, {region.state}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-start gap-3 text-brand-navy-950">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-navy-950/5 text-brand-navy-800">
+                <Clock className="size-4" />
+              </span>
+              <div className="text-sm">
+                {company.hours.map((h) => (
+                  <p key={h.days} className="flex justify-between gap-6 font-medium">
+                    <span>{h.days}</span>
+                    <span className="text-muted-foreground">{h.hours}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-border bg-white p-8 shadow-sm lg:col-span-3">
+          <QuoteForm />
+        </div>
+      </Container>
+    </section>
+  );
+}
