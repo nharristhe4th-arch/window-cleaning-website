@@ -55,6 +55,13 @@ const ScrollExpandMedia = ({
     if (!isActive || mediaFullyExpanded) return;
 
     const handleWheel = (e: WheelEvent) => {
+      // Already fully collapsed and still scrolling up (or fully expanded and
+      // still scrolling down) — release control instead of trapping the
+      // event, so the user can scroll away from the section immediately.
+      if ((scrollProgress <= 0 && e.deltaY < 0) || (scrollProgress >= 1 && e.deltaY > 0)) {
+        return;
+      }
+
       e.preventDefault();
       const scrollDelta = e.deltaY * 0.0009;
       const newProgress = Math.min(Math.max(scrollProgress + scrollDelta, 0), 1);
@@ -77,6 +84,13 @@ const ScrollExpandMedia = ({
 
       const touchY = e.touches[0].clientY;
       const deltaY = touchStartY - touchY;
+
+      // Same boundary release as the wheel handler, using the same deltaY
+      // sign convention (positive = scrolling down).
+      if ((scrollProgress <= 0 && deltaY < 0) || (scrollProgress >= 1 && deltaY > 0)) {
+        setTouchStartY(touchY);
+        return;
+      }
 
       e.preventDefault();
       const scrollFactor = deltaY < 0 ? 0.008 : 0.005;
