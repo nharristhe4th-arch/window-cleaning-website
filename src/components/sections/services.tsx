@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Building2, Calendar, CheckCircle2, ClipboardList, Home, Store } from "lucide-react";
+import { Building2, Calendar, CheckCircle2, ClipboardList, Home, House, Store } from "lucide-react";
 import { Container, SectionHeading } from "@/components/section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { services } from "@/lib/site-data";
 
 const icons = {
+  house: House,
   building: Building2,
   storefront: Store,
   clipboard: ClipboardList,

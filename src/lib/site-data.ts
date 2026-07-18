@@ -197,10 +197,26 @@ export type Service = {
   summary: string;
   description: string;
   bullets: string[];
-  icon: "building" | "storefront" | "clipboard" | "home" | "calendar";
+  icon: "house" | "building" | "storefront" | "clipboard" | "home" | "calendar";
 };
 
 export const services: Service[] = [
+  {
+    slug: "residential-window-cleaning",
+    name: "Residential Window Cleaning",
+    shortName: "Residential",
+    summary:
+      "Streak-free interior and exterior window cleaning for homeowners, scheduled around your life and handled with care around screens and landscaping.",
+    description:
+      "We help homeowners keep their windows streak-free inside and out, from single visits to seasonal cleanings. We work around your schedule and take care with screens, sills, and surrounding landscaping.",
+    bullets: [
+      "Interior & exterior cleaning",
+      "Screen cleaning",
+      "One-time or recurring visits",
+      "Track & sill detailing",
+    ],
+    icon: "house",
+  },
   {
     slug: "commercial-window-cleaning",
     name: "Commercial Window Cleaning",
