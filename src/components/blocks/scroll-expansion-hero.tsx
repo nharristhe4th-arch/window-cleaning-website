@@ -169,7 +169,7 @@ const ScrollExpandMedia = ({
           <div className="relative z-10 container mx-auto flex flex-col items-center justify-start">
             <div className="relative flex h-[100dvh] w-full flex-col items-center justify-center">
               <div
-                className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform rounded-2xl transition-none"
+                className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform rounded-2xl bg-white transition-none"
                 style={{
                   width: `${mediaWidth}px`,
                   height: `${mediaHeight}px`,
@@ -208,12 +208,12 @@ const ScrollExpandMedia = ({
                         alt={mediaAlt || title || "Media content"}
                         fill
                         sizes="(max-width: 768px) 95vw, 1250px"
-                        className="rounded-xl object-cover"
+                        className="rounded-xl object-contain"
                       />
                       <motion.div
-                        className="absolute inset-0 rounded-xl bg-brand-navy-950/40"
-                        initial={{ opacity: 0.7 }}
-                        animate={{ opacity: 0.7 - scrollProgress * 0.3 }}
+                        className="pointer-events-none absolute inset-0 rounded-xl bg-brand-navy-950/40"
+                        initial={{ opacity: 0.35 }}
+                        animate={{ opacity: 0.35 - scrollProgress * 0.25 }}
                         transition={{ duration: 0.2 }}
                       />
                     </div>
