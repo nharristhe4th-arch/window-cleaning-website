@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Phone, ShieldCheck, Star } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
@@ -6,9 +9,29 @@ import { Container } from "@/components/section";
 import { company } from "@/lib/site-data";
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [showShader, setShowShader] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    // The shader runs a continuous WebGL render loop, so it should only be
+    // mounted while the hero is actually visible — not for the entire time
+    // the homepage is open, which would keep rendering full-viewport frames
+    // behind every section as the page is scrolled.
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowShader(entry.isIntersecting),
+      { rootMargin: "200px 0px" },
+    );
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-black">
-      <WebGLShader />
+    <section ref={sectionRef} className="relative transform-gpu overflow-hidden bg-black">
+      {showShader ? <WebGLShader /> : null}
 
       <Container className="relative flex min-h-[92vh] flex-col justify-center gap-10 py-28 lg:py-36">
         <div className="flex flex-wrap items-center gap-3">

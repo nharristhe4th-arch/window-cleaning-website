@@ -11,6 +11,10 @@ export const company = {
   ],
   reviewCount: "16+",
   quoteUrl: "/contact",
+  founders: "Nick Harris and Eli Bennett",
+  foundedYear: "2023",
+  yearsExperience: "4",
+  tagline: "Streak-Free Since '23",
 } as const;
 
 export const regions = [
@@ -318,6 +322,33 @@ export const whyChooseUs = [
   {
     title: "Friendly Service",
     description: "Easy to work with, easy to talk to, and genuinely glad to be helping your business look its best.",
+  },
+];
+
+export const whyUsPillars = [
+  {
+    icon: "graduation-cap",
+    title: "Local & College-Owned",
+    paragraph:
+      "Squeegee Guys isn't a franchise or a call center dispatching subcontractors — we're a locally owned, college-owned business built from the ground up by two students who saw an opportunity and went after it. Every job we take on reflects directly on our name in the communities we serve, and that's exactly how we like it.",
+  },
+  {
+    icon: "history",
+    title: "4 Years of Experience",
+    paragraph:
+      "We've spent four years learning the details that separate a good window cleaning job from a great one: the right technique for older storefront glass, how to work around business hours without disrupting customers, and how to leave frames, sills, and tracks as spotless as the glass itself. Experience shows up in the results.",
+  },
+  {
+    icon: "calendar-check",
+    title: "Reliable, Every Time",
+    paragraph:
+      "When we say we'll be there, we're there. Recurring accounts build their schedule around us because we treat every appointment as a commitment, not a suggestion — no last-minute cancellations, no ghosting, no surprises. Reliability is the foundation everything else is built on.",
+  },
+  {
+    icon: "star",
+    title: "Reviews That Back It Up",
+    paragraph:
+      "Our growth has come almost entirely from word of mouth and repeat business, and it shows in our reputation: 16+ five-star reviews on Google from businesses who brought us back for their next cleaning. We'd rather earn that kind of trust than chase one-time jobs.",
   },
 ];
 
