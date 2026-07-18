@@ -14,9 +14,9 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { Contact } from "@/components/sections/contact";
 
 export const metadata: Metadata = {
-  title: "Commercial Window Cleaning in Indianapolis & Charleston",
+  title: "Residential & Commercial Window Cleaning in Indianapolis & Charleston",
   description:
-    "Student-owned commercial window cleaning for storefronts, offices, and medical buildings across the Indianapolis metro and greater Charleston region. Get a free quote today.",
+    "Student-owned window cleaning for homes and businesses, including storefronts, offices, and medical buildings, across the Indianapolis metro and greater Charleston region. Get a free quote today.",
   alternates: {
     canonical: "/",
   },

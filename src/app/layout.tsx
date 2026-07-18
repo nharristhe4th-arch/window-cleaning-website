@@ -20,11 +20,11 @@ const siteUrl = "https://www.squeegeeguys.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Squeegee Guys | Commercial Window Cleaning Indianapolis & Charleston",
+    default: "Squeegee Guys | Residential & Commercial Window Cleaning in Indianapolis & Charleston",
     template: "%s | Squeegee Guys",
   },
   description:
-    "Squeegee Guys is a student-owned commercial window cleaning company serving Indianapolis, Carmel, Fishers, and the greater Charleston, SC region. Storefront, office, and recurring maintenance window cleaning with 16+ five-star reviews.",
+    "Squeegee Guys is a student-owned window cleaning company serving homes and businesses in Indianapolis, Carmel, Fishers, and the greater Charleston, SC region. Residential, storefront, office, and recurring maintenance window cleaning with 16+ five-star reviews.",
   keywords: [
     "commercial window cleaning",
     "storefront window cleaning",
@@ -42,15 +42,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: company.name,
-    title: "Squeegee Guys | Commercial Window Cleaning Done Right",
+    title: "Squeegee Guys | Residential & Commercial Window Cleaning",
     description:
-      "Professional, recurring commercial window cleaning for storefronts, offices, and medical buildings across the Indianapolis metro and greater Charleston region.",
+      "Professional, recurring window cleaning for homes and businesses, including storefronts, offices, and medical buildings, across the Indianapolis metro and greater Charleston region.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Squeegee Guys | Commercial Window Cleaning Done Right",
+    title: "Squeegee Guys | Residential & Commercial Window Cleaning",
     description:
-      "Student-owned, locally operated commercial window cleaning across the Indianapolis metro and greater Charleston region.",
+      "Student-owned, locally operated window cleaning for homes and businesses across the Indianapolis metro and greater Charleston region.",
   },
   robots: {
     index: true,
