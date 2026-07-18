@@ -12,7 +12,7 @@ const pillarIcons = {
 
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-gradient-to-b from-white via-sky-50/50 to-white py-24 sm:py-32">
+    <section id="why-us" className="bg-gradient-to-b from-white via-sky-50/50 to-white py-14 sm:py-24 lg:py-32">
       <Container>
         <Reveal>
           <SectionHeading
@@ -50,9 +50,12 @@ export function WhyChooseUs() {
           })}
         </RevealGroup>
 
-        <RevealGroup className="mt-20 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
+        <RevealGroup className="no-scrollbar -mx-6 mt-20 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
           {whyChooseUs.map((item) => (
-            <RevealItem key={item.title} className="flex flex-col gap-3">
+            <RevealItem
+              key={item.title}
+              className="flex w-[45%] shrink-0 snap-center flex-col gap-3 sm:w-auto sm:shrink"
+            >
               <div className="flex size-10 items-center justify-center rounded-full bg-sky-100 text-sky-600">
                 <CheckCircle2 className="size-5" />
               </div>

@@ -15,7 +15,7 @@ const icons = {
 
 export function Services() {
   return (
-    <section id="services" className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-24 sm:py-32">
+    <section id="services" className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-14 sm:py-24 lg:py-32">
       <Container>
         <Reveal>
           <SectionHeading
@@ -25,7 +25,7 @@ export function Services() {
           />
         </Reveal>
 
-        <RevealGroup className="mt-16 grid gap-6 lg:grid-cols-3">
+        <RevealGroup className="no-scrollbar -mx-6 mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = icons[service.icon];
             const isFeature = index === services.length - 1;
@@ -33,7 +33,7 @@ export function Services() {
               <RevealItem
                 key={service.slug}
                 id={service.slug}
-                className={`group relative flex flex-col rounded-3xl border p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 ${
+                className={`group relative flex w-[85%] shrink-0 snap-center flex-col rounded-3xl border p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 sm:w-auto sm:shrink ${
                   isFeature
                     ? "border-transparent bg-gradient-to-br from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-300/50 lg:col-span-3 lg:flex-row lg:items-center lg:gap-12"
                     : "border-sky-200/60 bg-white/70 shadow-sm shadow-sky-200/40 hover:shadow-lg hover:shadow-sky-200/50"

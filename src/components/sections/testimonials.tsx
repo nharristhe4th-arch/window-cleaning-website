@@ -5,7 +5,7 @@ import { company, testimonials } from "@/lib/site-data";
 
 export function Testimonials() {
   return (
-    <section className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-24 sm:py-32">
+    <section className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-14 sm:py-24 lg:py-32">
       <Container>
         <Reveal>
           <SectionHeading
@@ -15,11 +15,11 @@ export function Testimonials() {
           />
         </Reveal>
 
-        <RevealGroup className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="no-scrollbar -mx-6 mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
           {testimonials.map((t) => (
             <RevealItem
               key={t.name}
-              className="flex flex-col rounded-3xl border border-sky-200/60 bg-white/70 p-7 shadow-sm shadow-sky-200/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-200/50"
+              className="flex w-[85%] shrink-0 snap-center flex-col rounded-3xl border border-sky-200/60 bg-white/70 p-7 shadow-sm shadow-sky-200/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-200/50 md:w-auto md:shrink"
             >
               <div className="flex items-center gap-0.5 text-sky-500">
                 {Array.from({ length: 5 }).map((_, i) => (

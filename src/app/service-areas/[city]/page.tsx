@@ -56,7 +56,7 @@ export default async function CityPage({
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white py-14 sm:py-24 lg:py-32">
         <div className="absolute inset-0">
           <SafeImage
             src={images.cityBlueSky}
@@ -94,7 +94,7 @@ export default async function CityPage({
         </Container>
       </section>
 
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-14 sm:py-24 lg:py-32">
         <Container className="grid gap-16 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <SectionHeading

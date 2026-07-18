@@ -28,7 +28,7 @@ const points = [
 
 export function About() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-14 sm:py-24 lg:py-32">
       <Container className="grid items-center gap-16 lg:grid-cols-2">
         <Reveal>
           <Eyebrow>Our Story</Eyebrow>

@@ -5,7 +5,7 @@ import { faqs } from "@/lib/site-data";
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-gradient-to-b from-white via-sky-50/40 to-white py-24 sm:py-32">
+    <section id="faq" className="bg-gradient-to-b from-white via-sky-50/40 to-white py-14 sm:py-24 lg:py-32">
       <Container className="max-w-3xl">
         <Reveal>
           <SectionHeading

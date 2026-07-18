@@ -31,7 +31,7 @@ export default function ServiceAreasPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-14 sm:py-24 lg:py-32">
         <Container>
           <Reveal>
             <SectionHeading title="Where we work" align="left" />

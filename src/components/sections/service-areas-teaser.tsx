@@ -6,7 +6,7 @@ import { regions, serviceAreas } from "@/lib/site-data";
 
 export function ServiceAreasTeaser() {
   return (
-    <section className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-24 sm:py-32">
+    <section className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-14 sm:py-24 lg:py-32">
       <Container>
         <Reveal>
           <SectionHeading

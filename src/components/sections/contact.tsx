@@ -6,7 +6,7 @@ import { company, regions } from "@/lib/site-data";
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-24 sm:py-32">
+    <section id="contact" className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/70 py-14 sm:py-24 lg:py-32">
       <Container className="grid gap-12 lg:grid-cols-5">
         <Reveal className="lg:col-span-2">
           <Eyebrow>Get In Touch</Eyebrow>
