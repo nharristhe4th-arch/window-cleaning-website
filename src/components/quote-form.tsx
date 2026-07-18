@@ -51,7 +51,7 @@ export function QuoteForm() {
         <h3 className="text-xl font-bold text-slate-800">Request received</h3>
         <p className="max-w-sm text-sm text-slate-500">
           Thanks for reaching out. We typically respond to quote requests the same
-          business day — we will be in touch shortly.
+          business day. We will be in touch shortly.
         </p>
       </div>
     );

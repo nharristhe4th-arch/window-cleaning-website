@@ -52,7 +52,7 @@ export async function submitQuoteRequest(
       from: `${company.name} Website <onboarding@resend.dev>`,
       to: [company.email],
       replyTo: email,
-      subject: `New quote request — ${business}`,
+      subject: `New quote request: ${business}`,
       text: [
         `Name: ${name}`,
         `Business: ${business}`,

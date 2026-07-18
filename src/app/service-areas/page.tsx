@@ -9,7 +9,7 @@ import { regions, serviceAreas } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Commercial Window Cleaning Service Areas",
   description:
-    "Squeegee Guys provides commercial window cleaning throughout the Indianapolis metro area — including Carmel, Fishers, Noblesville, Westfield, and Zionsville — and the greater Charleston region, including Mount Pleasant, North Charleston, Summerville, and Goose Creek.",
+    "Squeegee Guys provides commercial window cleaning throughout the Indianapolis metro area, including Carmel, Fishers, Noblesville, Westfield, and Zionsville, and the greater Charleston region, including Mount Pleasant, North Charleston, Summerville, and Goose Creek.",
   alternates: {
     canonical: "/service-areas",
   },
@@ -25,7 +25,7 @@ export default function ServiceAreasPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-balance text-slate-500">
             Proudly serving businesses throughout the Indianapolis metro area and the
-            greater Charleston region. Do not see your city? Contact us — we are happy
+            greater Charleston region. Do not see your city? Contact us, and we are happy
             to check if you are within our service area.
           </p>
         </Container>

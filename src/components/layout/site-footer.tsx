@@ -16,7 +16,7 @@ export function SiteFooter() {
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
             Student-owned, locally operated commercial window cleaning. We help retail
-            storefronts, offices, and medical buildings make a spotless first impression —
+            storefronts, offices, and medical buildings make a spotless first impression,
             backed by {company.reviewCount} five-star Google reviews.
           </p>
           <div className="mt-6 space-y-3 text-sm">

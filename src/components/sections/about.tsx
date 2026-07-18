@@ -16,7 +16,7 @@ const points = [
     icon: TrendingUp,
     title: "Grown through hard work",
     description:
-      "Word of mouth, quality service, and consistent follow-through have driven our growth — not gimmicks or discounting.",
+      "Word of mouth, quality service, and consistent follow-through have driven our growth, not gimmicks or discounting.",
   },
   {
     icon: HeartHandshake,
@@ -38,7 +38,7 @@ export function About() {
           <p className="mt-6 text-lg leading-relaxed text-slate-500">
             {company.name} started while our founder was in college, after seeing firsthand
             how much clean windows affect the way customers perceive a business. A
-            storefront with streaky, dusty glass sends a message — and it is not the one
+            storefront with streaky, dusty glass sends a message, and it is not the one
             most business owners want to send.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate-500">

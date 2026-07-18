@@ -77,7 +77,7 @@ export function Services() {
             href="/contact"
             className="text-base font-semibold text-sky-700 underline underline-offset-4 transition-colors duration-300 hover:text-sky-500"
           >
-            Talk to us — we&apos;ll recommend a plan →
+            Talk to us and we&apos;ll recommend a plan →
           </Link>
         </Reveal>
       </Container>

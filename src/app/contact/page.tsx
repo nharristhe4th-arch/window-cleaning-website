@@ -5,7 +5,7 @@ import { Faq } from "@/components/sections/faq";
 import { company } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Get a Free Commercial Window Cleaning Quote",
+  title: "Contact Us: Get a Free Commercial Window Cleaning Quote",
   description:
     "Request a free quote from Squeegee Guys, a student-owned commercial window cleaning company serving the Indianapolis metro and greater Charleston region.",
   alternates: {
@@ -26,7 +26,7 @@ export default function ContactPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-balance text-slate-500">
             Tell us about your building and we will follow up with a fast, no-obligation
-            estimate — most requests hear back the same business day.
+            estimate. Most requests hear back the same business day.
           </p>
         </Container>
       </section>

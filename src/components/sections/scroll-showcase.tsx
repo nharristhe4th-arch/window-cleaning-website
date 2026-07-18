@@ -22,7 +22,7 @@ export function ScrollShowcase() {
         <p className="mt-4 text-lg text-slate-500">
           We use professional water-fed pole systems and deionized pure water to safely
           clean windows from the ground, even several stories up. No streaks, no spots,
-          no residue — just consistently spotless glass.
+          no residue, just consistently spotless glass.
         </p>
         <div className="mt-8 grid gap-6 text-left sm:grid-cols-3">
           {equipment.map((item) => (

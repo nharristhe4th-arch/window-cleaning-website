@@ -15,7 +15,7 @@ export function Contact() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-500">
             Tell us a bit about your building and we will get back to you with a fast,
-            no-obligation quote — most requests are answered the same business day.
+            no-obligation quote. Most requests are answered the same business day.
           </p>
 
           <div className="mt-10 space-y-5">

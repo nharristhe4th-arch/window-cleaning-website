@@ -18,15 +18,15 @@ export function WhyChooseUs() {
           <SectionHeading
             eyebrow={company.tagline}
             title="A local, college-owned team that shows up and gets it right"
-            description="We built Squeegee Guys on the fundamentals that make businesses trust a vendor for the long term — and four years in, we've got the track record to back it up."
+            description="We built Squeegee Guys on the fundamentals that make businesses trust a vendor for the long term, and four years in, we've got the track record to back it up."
           />
         </Reveal>
 
         <Reveal delay={0.15}>
           <p className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-slate-500">
-            {company.name} was founded by {company.founders} — two college students who turned a simple
+            {company.name} was founded by {company.founders}, two college students who turned a simple
             observation, that clean windows change how customers see a business, into a company built on
-            doing the job right every time. {company.yearsExperience} years later, we&apos;re still locally
+            doing the job right every time. {company.yearsExperience}{" "}years later, we&apos;re still locally
             owned and operated, still run by people who show up to the job site, and still living by the
             tagline that&apos;s followed us since day one: <span className="font-semibold text-sky-600">{company.tagline}</span>.
           </p>

@@ -83,7 +83,7 @@ export function Hero() {
             className="mt-6 max-w-xl text-lg text-balance text-white/90 sm:text-xl"
           >
             Professional window cleaning for homes and businesses across the
-            Indianapolis metro and greater Charleston region — from everyday
+            Indianapolis metro and greater Charleston region, from everyday
             residential care to storefronts, offices, and medical buildings
             that need to make a great first impression.
           </motion.p>

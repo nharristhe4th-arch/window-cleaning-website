@@ -11,7 +11,7 @@ export function Testimonials() {
           <SectionHeading
             eyebrow="What Businesses Say"
             title={`Trusted by businesses with ${company.reviewCount} five-star reviews`}
-            description="We measure success by whether customers keep us on — here's what a few of them have to say."
+            description="We measure success by whether customers keep us on. Here's what a few of them have to say."
           />
         </Reveal>
 

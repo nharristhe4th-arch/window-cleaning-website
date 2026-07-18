@@ -12,7 +12,7 @@ export function ServiceAreasTeaser() {
           <SectionHeading
             eyebrow="Service Areas"
             title="Proudly serving two growing regions"
-            description="If your business is nearby but you don't see your city listed, contact us — we're happy to see if you're within our service area."
+            description="If your business is nearby but you don't see your city listed, contact us and we're happy to see if you're within our service area."
           />
         </Reveal>
 

@@ -284,7 +284,7 @@ export const whyChooseUs = [
   {
     title: "Student-Owned Business",
     description:
-      "We started Squeegee Guys in college and built it on hustle, accountability, and a genuine desire to do great work — values that show up on every job.",
+      "We started Squeegee Guys in college and built it on hustle, accountability, and a genuine desire to do great work. Those values show up on every job.",
   },
   {
     title: "Professional Appearance",
@@ -305,7 +305,7 @@ export const whyChooseUs = [
   },
   {
     title: "Competitive Pricing",
-    description: "Straightforward, fair pricing with no hidden fees — built for businesses that value transparency.",
+    description: "Straightforward, fair pricing with no hidden fees, built for businesses that value transparency.",
   },
   {
     title: "Attention to Detail",
@@ -330,7 +330,7 @@ export const whyUsPillars = [
     icon: "graduation-cap",
     title: "Local & College-Owned",
     paragraph:
-      "Squeegee Guys isn't a franchise or a call center dispatching subcontractors — we're a locally owned, college-owned business built from the ground up by two students who saw an opportunity and went after it. Every job we take on reflects directly on our name in the communities we serve, and that's exactly how we like it.",
+      "Squeegee Guys isn't a franchise or a call center dispatching subcontractors. We're a locally owned, college-owned business built from the ground up by two students who saw an opportunity and went after it. Every job we take on reflects directly on our name in the communities we serve, and that's exactly how we like it.",
   },
   {
     icon: "history",
@@ -342,7 +342,7 @@ export const whyUsPillars = [
     icon: "calendar-check",
     title: "Reliable, Every Time",
     paragraph:
-      "When we say we'll be there, we're there. Recurring accounts build their schedule around us because we treat every appointment as a commitment, not a suggestion — no last-minute cancellations, no ghosting, no surprises. Reliability is the foundation everything else is built on.",
+      "When we say we'll be there, we're there. Recurring accounts build their schedule around us because we treat every appointment as a commitment, not a suggestion. No last-minute cancellations, no ghosting, no surprises. Reliability is the foundation everything else is built on.",
   },
   {
     icon: "star",
@@ -403,7 +403,7 @@ export const process = [
   {
     step: "03",
     title: "Enjoy Spotless Windows",
-    description: "Sit back while we handle the glass — streak-free, on schedule, and hassle-free every time.",
+    description: "Sit back while we handle the glass, streak-free, on schedule, and hassle-free every time.",
   },
 ];
 
