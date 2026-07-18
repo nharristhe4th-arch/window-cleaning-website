@@ -47,15 +47,23 @@ export function WebGLShader() {
 
         float d = length(p) * distortion;
 
-        float rx = p.x * (1.0 + d);
-        float gx = p.x;
-        float bx = p.x * (1.0 - d);
+        float ax = p.x * (1.0 + d);
+        float bx = p.x;
+        float cx = p.x * (1.0 - d);
 
-        float r = 0.05 / abs(p.y + sin((rx + time) * xScale) * yScale);
-        float g = 0.05 / abs(p.y + sin((gx + time) * xScale) * yScale);
+        float a = 0.05 / abs(p.y + sin((ax + time) * xScale) * yScale);
         float b = 0.05 / abs(p.y + sin((bx + time) * xScale) * yScale);
+        float c = 0.05 / abs(p.y + sin((cx + time) * xScale) * yScale);
 
-        gl_FragColor = vec4(r, g, b, 1.0);
+        // Blend the three offset traces into shades of blue instead of
+        // separate RGB channels, so the motion stays but the palette
+        // matches the site's sky-blue accent instead of a rainbow.
+        vec3 pale = vec3(0.85, 0.93, 1.0);
+        vec3 mid = vec3(0.35, 0.65, 1.0);
+        vec3 deep = vec3(0.08, 0.4, 0.95);
+        vec3 color = a * pale + b * mid + c * deep;
+
+        gl_FragColor = vec4(color, 1.0);
       }
     `
 
