@@ -442,46 +442,45 @@ export const faqs = [
 
 export const testimonials = [
   {
-    name: "Jenna R.",
-    role: "Store Manager, Retail Storefront",
-    location: "Carmel, IN",
+    name: "Pat Young",
+    role: "Homeowner",
+    location: "Google Review",
     quote:
-      "Our storefront glass has never looked better. They're consistent, communicative, and our windows are spotless every single visit.",
+      "The squeegee guys are amazing! They came to my house, which has a lot of windows and a lot of high windows, and they did an excellent job. They were professional, friendly, and thorough. I can't recommend them highly enough!",
   },
   {
-    name: "Dr. Patel",
-    role: "Office Manager, Dental Practice",
-    location: "Fishers, IN",
+    name: "Brian Hoener",
+    role: "Homeowner",
+    location: "Google Review",
     quote:
-      "Patients notice a clean office, and Squeegee Guys keeps our windows looking sharp without us having to think about it. Easy to schedule and always on time.",
+      "The Squeegee Guys were fantastic. They did a great job. They went to work right and finished in a timely manner. I would definitely recommend and will be using them next summer.",
   },
   {
-    name: "Marcus T.",
-    role: "Property Manager",
-    location: "Indianapolis, IN",
+    name: "Justin Post",
+    role: "Homeowner",
+    location: "Google Review",
     quote:
-      "Managing several properties means I need a vendor I can trust to just handle it. They communicate well and the quality is consistent across every building.",
+      "Possibly the best guys you could ever have. Trustworthy, respectful, clean, professional and quite good looking.",
   },
   {
-    name: "Caroline S.",
-    role: "Owner, Restaurant",
-    location: "Mount Pleasant, SC",
+    name: "Michael Perkins",
+    role: "Homeowner",
+    location: "Google Review",
     quote:
-      "Salt air destroys our windows fast. Recurring service from Squeegee Guys keeps our dining room windows clear and inviting for guests.",
+      "Squeegee Guys did an excellent job. Very nice college young men. I would definitely recommend them.",
   },
   {
-    name: "Ben H.",
-    role: "Practice Administrator, Chiropractic Office",
-    location: "Charleston, SC",
-    quote:
-      "Professional, courteous, and detail-oriented. They cleaned window tracks and sills that hadn't been touched in years.",
+    name: "Chris Regenovich",
+    role: "Homeowner",
+    location: "Google Review",
+    quote: "They did a fabulous job cleaning my windows!!! I highly recommend them!",
   },
   {
-    name: "Alicia M.",
-    role: "Realtor",
-    location: "Summerville, SC",
+    name: "Meghan Hugh",
+    role: "Homeowner",
+    location: "Google Review",
     quote:
-      "I called for a pre-listing cleaning with short notice and they made it happen before my photo shoot. The property looked incredible.",
+      "These two boys were wonderful! They were efficient, sweet, and left my windows spotless.",
   },
 ];
 

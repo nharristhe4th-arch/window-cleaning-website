@@ -9,8 +9,8 @@ export function Testimonials() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="What Businesses Say"
-            title={`Trusted by businesses with ${company.reviewCount} five-star reviews`}
+            eyebrow="What Customers Say"
+            title={`Trusted by homes and businesses with ${company.reviewCount} five-star reviews`}
             description="We measure success by whether customers keep us on. Here's what a few of them have to say."
           />
         </Reveal>

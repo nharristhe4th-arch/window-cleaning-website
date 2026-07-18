@@ -49,8 +49,8 @@ export default async function CityPage({
   const area = serviceAreas.find((a) => a.slug === city);
   if (!area) notFound();
 
-  const localTestimonial =
-    testimonials.find((t) => t.location.startsWith(area.name)) ?? testimonials[0];
+  const areaIndex = serviceAreas.findIndex((a) => a.slug === area.slug);
+  const localTestimonial = testimonials[areaIndex % testimonials.length];
 
   const otherAreas = serviceAreas.filter((a) => a.region === area.region && a.slug !== area.slug);
 
