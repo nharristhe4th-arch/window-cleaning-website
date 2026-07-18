@@ -7,6 +7,7 @@ import { SafeImage } from "@/components/safe-image";
 interface ScrollExpandMediaProps {
   mediaType?: "video" | "image";
   mediaSrc: string;
+  mediaAlt?: string;
   posterSrc?: string;
   bgImageSrc: string;
   title?: string;
@@ -19,6 +20,7 @@ interface ScrollExpandMediaProps {
 const ScrollExpandMedia = ({
   mediaType = "image",
   mediaSrc,
+  mediaAlt,
   posterSrc,
   bgImageSrc,
   title,
@@ -203,7 +205,7 @@ const ScrollExpandMedia = ({
                     <div className="relative h-full w-full">
                       <SafeImage
                         src={mediaSrc}
-                        alt={title || "Media content"}
+                        alt={mediaAlt || title || "Media content"}
                         fill
                         sizes="(max-width: 768px) 95vw, 1250px"
                         className="rounded-xl object-cover"

@@ -8,7 +8,8 @@ export function ScrollShowcase() {
   return (
     <ScrollExpandMedia
       mediaType="image"
-      mediaSrc={images.glassFacade}
+      mediaSrc={images.beforeAfterHero}
+      mediaAlt="Before and after window cleaning by Squeegee Guys"
       bgImageSrc={images.cityDusk}
       title="See The Difference"
       date="Professional Equipment"

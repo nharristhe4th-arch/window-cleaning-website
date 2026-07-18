@@ -4,6 +4,7 @@ import { TrustBar } from "@/components/sections/trust-bar";
 import { Services } from "@/components/sections/services";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { ScrollShowcase } from "@/components/sections/scroll-showcase";
+import { WorkGallery } from "@/components/sections/work-gallery";
 import { Process } from "@/components/sections/process";
 import { About } from "@/components/sections/about";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -29,6 +30,7 @@ export default function Home() {
       <Services />
       <WhyChooseUs />
       <ScrollShowcase />
+      <WorkGallery />
       <Process />
       <About />
       <Testimonials />

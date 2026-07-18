@@ -3,6 +3,10 @@ function unsplash(id: string, w = 1600) {
 }
 
 export const images = {
+  beforeAfterHero: "/images/work/before-after-hero.jpg",
+  beforeAfterStoneSill: "/images/work/before-after-stone-sill.jpg",
+  galleryHouseExterior: "/images/work/gallery-house-exterior.jpg",
+  galleryTechnicianAction: "/images/work/gallery-technician-action.jpg",
   heroBuilding: unsplash("photo-1497366754035-f200968a6e72", 2000),
   glassFacade: unsplash("photo-1444201983204-c43cbd584d93", 2000),
   officeBuilding: unsplash("photo-1497366811353-6870744d04b2", 1800),
