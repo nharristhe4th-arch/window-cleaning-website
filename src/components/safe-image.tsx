@@ -15,7 +15,7 @@ export function SafeImage({ fallbackClassName, className, alt, ...props }: SafeI
     return (
       <div
         className={cn(
-          "bg-gradient-to-br from-brand-navy-900 via-brand-navy-800 to-brand-navy-950",
+          "bg-gradient-to-br from-sky-100 via-sky-200 to-sky-300",
           fallbackClassName ?? className,
         )}
         aria-label={typeof alt === "string" ? alt : undefined}

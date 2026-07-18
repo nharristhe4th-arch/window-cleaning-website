@@ -27,7 +27,7 @@ function SubmitButton() {
       type="submit"
       size="lg"
       disabled={pending}
-      className="h-12 rounded-full bg-brand-navy-950 text-base font-semibold text-white hover:bg-brand-navy-900 sm:col-span-2"
+      className="h-12 rounded-full text-base font-semibold sm:col-span-2"
     >
       {pending ? (
         <>
@@ -46,10 +46,10 @@ export function QuoteForm() {
 
   if (state.status === "success") {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-brand-sky-500/30 bg-brand-sky-500/5 px-6 py-12 text-center">
-        <CheckCircle2 className="size-10 text-brand-sky-500" />
-        <h3 className="text-xl font-bold text-brand-navy-950">Request received</h3>
-        <p className="max-w-sm text-sm text-muted-foreground">
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-sky-200/60 bg-white/70 px-6 py-12 text-center shadow-sm shadow-sky-200/40 backdrop-blur-md">
+        <CheckCircle2 className="size-10 text-sky-500" />
+        <h3 className="text-xl font-bold text-slate-800">Request received</h3>
+        <p className="max-w-sm text-sm text-slate-500">
           Thanks for reaching out. We typically respond to quote requests the same
           business day — we will be in touch shortly.
         </p>

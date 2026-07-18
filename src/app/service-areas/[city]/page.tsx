@@ -56,7 +56,7 @@ export default async function CityPage({
 
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy-950 py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white py-24 sm:py-32">
         <div className="absolute inset-0">
           <SafeImage
             src={images.cityBlueSky}
@@ -64,29 +64,29 @@ export default async function CityPage({
             fill
             sizes="100vw"
             priority
-            className="object-cover opacity-30"
+            className="object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-navy-950/70 via-brand-navy-950/90 to-brand-navy-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/90 to-white" />
         </div>
         <Container className="relative">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/90">
-            <MapPin className="size-3.5 text-brand-sky-400" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/60 bg-white/70 px-4 py-1.5 text-xs font-semibold text-sky-900 shadow-sm shadow-sky-200/40 backdrop-blur-md">
+            <MapPin className="size-3.5 text-sky-500" />
             {area.region}
           </span>
-          <h1 className="mt-6 max-w-2xl text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl">
+          <h1 className="mt-6 max-w-2xl text-4xl font-bold tracking-tight text-balance text-slate-800 sm:text-5xl">
             Commercial Window Cleaning in {area.name}, {area.stateAbbr}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-balance text-white/75">{area.intro}</p>
+          <p className="mt-6 max-w-2xl text-lg text-balance text-slate-500">{area.intro}</p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-sky-500 px-8 text-base font-semibold text-white hover:bg-brand-sky-400"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-sky-500 px-8 text-base font-semibold text-white shadow-sm shadow-sky-300/40 transition-all duration-300 hover:-translate-y-px hover:bg-sky-400 hover:shadow-md hover:shadow-sky-300/50"
             >
               Get Your Free Quote
             </Link>
             <Link
               href="/service-areas"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 text-base font-semibold text-white hover:bg-white/10"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-sky-200/60 bg-white/70 px-8 text-base font-semibold text-sky-900 shadow-sm shadow-sky-200/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 hover:shadow-md hover:shadow-sky-200/50"
             >
               View All Service Areas
             </Link>
@@ -102,17 +102,17 @@ export default async function CityPage({
               eyebrow={`Serving ${area.name}`}
               title={`Local, reliable commercial window cleaning for ${area.name} businesses`}
             />
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{area.focus}</p>
+            <p className="mt-6 text-lg leading-relaxed text-slate-500">{area.focus}</p>
 
             <div className="mt-10">
-              <h3 className="text-sm font-semibold tracking-wide text-brand-navy-800 uppercase">
+              <h3 className="text-sm font-semibold tracking-wide text-sky-600 uppercase">
                 Areas we regularly service in {area.name}
               </h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {area.districts.map((district) => (
                   <span
                     key={district}
-                    className="rounded-full border border-border bg-secondary/40 px-4 py-1.5 text-sm text-foreground/80"
+                    className="rounded-full border border-sky-200/60 bg-white/70 px-4 py-1.5 text-sm text-slate-600 shadow-sm shadow-sky-200/40 backdrop-blur-md"
                   >
                     {district}
                   </span>
@@ -121,36 +121,36 @@ export default async function CityPage({
             </div>
 
             <div className="mt-12">
-              <h3 className="text-sm font-semibold tracking-wide text-brand-navy-800 uppercase">
+              <h3 className="text-sm font-semibold tracking-wide text-sky-600 uppercase">
                 What we offer in {area.name}
               </h3>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {services.map((service) => (
-                  <li key={service.slug} className="flex items-start gap-2 text-sm text-foreground/85">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-navy-800" />
+                  <li key={service.slug} className="flex items-start gap-2 text-sm text-slate-600">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-sky-500" />
                     {service.name}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-12 rounded-3xl border border-border bg-secondary/30 p-7">
-              <div className="flex items-center gap-0.5 text-brand-sky-500">
+            <div className="mt-12 rounded-3xl border border-sky-200/60 bg-white/70 p-7 shadow-sm shadow-sky-200/40 backdrop-blur-md">
+              <div className="flex items-center gap-0.5 text-sky-500">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-4 fill-current" />
                 ))}
               </div>
-              <blockquote className="mt-3 text-base leading-relaxed text-foreground/85">
+              <blockquote className="mt-3 text-base leading-relaxed text-slate-600">
                 {localTestimonial.quote}
               </blockquote>
-              <p className="mt-4 text-sm font-semibold text-brand-navy-950">
+              <p className="mt-4 text-sm font-semibold text-slate-800">
                 {localTestimonial.name} &middot; {localTestimonial.role}
               </p>
             </div>
 
             {otherAreas.length > 0 && (
               <div className="mt-12">
-                <h3 className="text-sm font-semibold tracking-wide text-brand-navy-800 uppercase">
+                <h3 className="text-sm font-semibold tracking-wide text-sky-600 uppercase">
                   Also serving nearby
                 </h3>
                 <div className="mt-4 flex flex-wrap gap-3">
@@ -158,10 +158,10 @@ export default async function CityPage({
                     <Link
                       key={other.slug}
                       href={`/service-areas/${other.slug}`}
-                      className="group flex items-center gap-1 text-sm font-medium text-brand-navy-900 hover:text-brand-sky-600"
+                      className="group flex items-center gap-1 text-sm font-medium text-sky-700 transition-colors duration-300 hover:text-sky-500"
                     >
                       {other.name}
-                      <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                      <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </Link>
                   ))}
                 </div>
@@ -170,11 +170,11 @@ export default async function CityPage({
           </div>
 
           <div className="lg:col-span-2">
-            <div className="sticky top-24 rounded-3xl border border-border bg-secondary/30 p-8">
-              <h3 className="text-xl font-bold text-brand-navy-950">
+            <div className="sticky top-24 rounded-3xl border border-sky-200/60 bg-white/70 p-8 shadow-sm shadow-sky-200/40 backdrop-blur-md">
+              <h3 className="text-xl font-bold text-slate-800">
                 Request a free quote in {area.name}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-slate-500">
                 Most quote requests are answered the same business day.
               </p>
               <div className="mt-6">

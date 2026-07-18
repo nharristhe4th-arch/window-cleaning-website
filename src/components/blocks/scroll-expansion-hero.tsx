@@ -221,7 +221,7 @@ const ScrollExpandMedia = ({
                 <div className="relative z-10 mt-4 flex translate-y-[calc(100%+1rem)] flex-col items-center text-center transition-none">
                   {date && (
                     <p
-                      className="text-lg text-brand-sky-300"
+                      className="text-lg text-sky-300"
                       style={{ transform: `translateX(-${textTranslateX}vw)` }}
                     >
                       {date}
@@ -229,7 +229,7 @@ const ScrollExpandMedia = ({
                   )}
                   {scrollToExpand && (
                     <p
-                      className="text-center font-medium text-brand-sky-300"
+                      className="text-center font-medium text-sky-300"
                       style={{ transform: `translateX(${textTranslateX}vw)` }}
                     >
                       {scrollToExpand}

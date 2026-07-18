@@ -16,15 +16,15 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-brand-navy-950 py-20 sm:py-28">
+      <section className="bg-gradient-to-b from-white via-sky-50 to-white py-20 sm:py-28">
         <Container className="text-center">
-          <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/90">
+          <span className="inline-flex items-center rounded-full border border-sky-200/60 bg-white/70 px-4 py-1.5 text-xs font-semibold text-sky-900 shadow-sm shadow-sky-200/40 backdrop-blur-md">
             {company.reviewCount} Five-Star Google Reviews
           </span>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-balance text-slate-800 sm:text-5xl">
             Request Your Free Quote
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-balance text-white/70">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-balance text-slate-500">
             Tell us about your building and we will follow up with a fast, no-obligation
             estimate — most requests hear back the same business day.
           </p>
