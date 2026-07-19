@@ -18,7 +18,7 @@ export function WhyChooseUs() {
           <SectionHeading
             eyebrow={company.tagline}
             title="A local, college-owned team that shows up and gets it right"
-            description="We built Squeegee Guys on the fundamentals that make businesses trust a vendor for the long term, and four years in, we've got the track record to back it up."
+            description={`We built Squeegee Guys on the fundamentals that make businesses trust a vendor for the long term, and ${company.yearsExperience} years in, we've got the track record to back it up.`}
           />
         </Reveal>
 

@@ -1,3 +1,5 @@
+const foundedYear = 2023;
+
 export const company = {
   name: "Squeegee Guys",
   legalTagline: "Student-Owned Commercial Window Cleaning",
@@ -12,8 +14,10 @@ export const company = {
   reviewCount: "16+",
   quoteUrl: "/contact",
   founders: "Nick Harris and Eli Bennett",
-  foundedYear: "2023",
-  yearsExperience: "4",
+  foundedYear: String(foundedYear),
+  // Computed at build time so this never goes stale like the hardcoded
+  // "4 years" figure did against the "Since '23" tagline.
+  yearsExperience: String(new Date().getFullYear() - foundedYear),
   tagline: "Streak-Free Since '23",
 } as const;
 
@@ -350,9 +354,9 @@ export const whyUsPillars = [
   },
   {
     icon: "history",
-    title: "4 Years of Experience",
+    title: `${company.yearsExperience} Years of Experience`,
     paragraph:
-      "We've spent four years learning the details that separate a good window cleaning job from a great one: the right technique for older storefront glass, how to work around business hours without disrupting customers, and how to leave frames, sills, and tracks as spotless as the glass itself. Experience shows up in the results.",
+      `We've spent ${company.yearsExperience} years learning the details that separate a good window cleaning job from a great one: the right technique for older storefront glass, how to work around business hours without disrupting customers, and how to leave frames, sills, and tracks as spotless as the glass itself. Experience shows up in the results.`,
   },
   {
     icon: "calendar-check",
