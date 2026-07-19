@@ -7,6 +7,7 @@ export const images = {
   beforeAfterStoneSill: "/images/work/before-after-stone-sill.jpg",
   galleryHouseExterior: "/images/work/gallery-house-exterior.jpg",
   galleryTechnicianAction: "/images/work/gallery-technician-action.jpg",
+  founders: "/images/team/founders.jpg",
   heroBuilding: unsplash("photo-1497366754035-f200968a6e72", 2000),
   glassFacade: unsplash("photo-1444201983204-c43cbd584d93", 2000),
   officeBuilding: unsplash("photo-1497366811353-6870744d04b2", 1800),
