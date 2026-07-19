@@ -5,7 +5,7 @@ export const company = {
   legalTagline: "Student-Owned Commercial Window Cleaning",
   phone: "(317) 764-1211",
   phoneHref: "tel:+13177641211",
-  email: "info@squeegeeguys.com",
+  email: "nharristhe4th@gmail.com",
   hours: [
     { days: "Monday – Friday", hours: "7:00 AM – 6:00 PM" },
     { days: "Saturday", hours: "8:00 AM – 2:00 PM" },
