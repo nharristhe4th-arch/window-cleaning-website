@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { company } from "@/lib/site-data";
+import { siteUrl } from "@/lib/site-url";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -14,8 +15,6 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
-
-const siteUrl = "https://www.squeegeeguys.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

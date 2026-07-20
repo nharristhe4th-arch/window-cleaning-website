@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { serviceAreas } from "@/lib/site-data";
-
-const siteUrl = "https://www.squeegeeguys.com";
+import { siteUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
