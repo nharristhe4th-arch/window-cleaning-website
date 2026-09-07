@@ -308,17 +308,23 @@ const ShineEffect = ({ isPressed }: { isPressed: boolean }) => {
   );
 };
 
+const subscribeToPointer = (onChange: () => void) => {
+  const query = window.matchMedia("(any-pointer: coarse)");
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+};
+const getTouchSnapshot = () => window.matchMedia("(any-pointer: coarse)").matches;
+const getServerTouchSnapshot = () => false;
+
 export const MetalButton = React.forwardRef<
   HTMLButtonElement,
   MetalButtonProps
 >(({ children, className, variant = "default", ...props }, ref) => {
   const [isPressed, setIsPressed] = React.useState(false);
   const [isHovered, setIsHovered] = React.useState(false);
-  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
-  }, []);
+  const isTouchDevice = React.useSyncExternalStore(
+    subscribeToPointer, getTouchSnapshot, getServerTouchSnapshot,
+  );
 
   const buttonText = children || "Button";
   const variants = metalButtonVariants(

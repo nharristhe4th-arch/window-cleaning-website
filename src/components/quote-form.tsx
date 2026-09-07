@@ -1,128 +1,83 @@
+// Replace src/components/quote-form.tsx together with the supplied quote.ts.
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useId, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
-import { AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { serviceAreas, services } from "@/lib/site-data";
+import { company } from "@/lib/site-data";
 import { submitQuoteRequest, type QuoteFormState } from "@/app/actions/quote";
-
-const initialState: QuoteFormState = { status: "idle" };
 
 function SubmitButton() {
   const { pending } = useFormStatus();
-
-  return (
-    <Button
-      type="submit"
-      size="lg"
-      disabled={pending}
-      className="h-12 rounded-full text-base font-semibold sm:col-span-2"
-    >
-      {pending ? (
-        <>
-          <Loader2 className="size-4 animate-spin" />
-          Sending...
-        </>
-      ) : (
-        "Get Your Free Quote"
-      )}
-    </Button>
-  );
+  return <button className="sg-cta" type="submit" disabled={pending} aria-busy={pending}>
+    {pending ? "Sending your request…" : "Get a free quote"}
+  </button>;
 }
 
-export function QuoteForm() {
-  const [state, formAction] = useActionState(submitQuoteRequest, initialState);
+export function QuoteForm({ defaultLocation = "" }: { defaultLocation?: string }) {
+  const [state, action] = useActionState<QuoteFormState, FormData>(submitQuoteRequest, { status: "idle" });
+  const [fields, setFields] = useState({ name: "", business: "", email: "", phone: "", property: "", service: "", location: defaultLocation, message: "" });
+  const prefix = useId();
+  const errorRef = useRef<HTMLDivElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (state.status === "error") errorRef.current?.focus();
+    if (state.status === "success") successRef.current?.focus();
+  }, [state]);
+  function set(field: keyof typeof fields, value: string) { setFields(previous => ({ ...previous, [field]: value })); }
 
-  if (state.status === "success") {
-    return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-sky-200/60 bg-white/70 px-6 py-12 text-center shadow-sm shadow-sky-200/40 backdrop-blur-md">
-        <CheckCircle2 className="size-10 text-sky-500" />
-        <h3 className="text-xl font-bold text-slate-800">Request received</h3>
-        <p className="max-w-sm text-sm text-slate-500">
-          Thanks for reaching out. We typically respond to quote requests the same
-          business day. We will be in touch shortly.
-        </p>
-      </div>
-    );
-  }
+  if (state.status === "success") return (
+    <div ref={successRef} tabIndex={-1} className="sg-success" role="status">
+      <h2>Your quote request has been sent</h2>
+      <p>Thanks for the details. This is a quote request, not a booked appointment.</p>
+    </div>
+  );
 
   return (
-    <form action={formAction} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="name">Full name</Label>
-        <Input id="name" name="name" required placeholder="Jane Smith" className="h-11" />
+    <form action={action} className="sg-form">
+      <p className="sg-help">Required fields are marked “required.”</p>
+      {state.status === "error" && <div ref={errorRef} tabIndex={-1} className="sg-error" role="alert">
+        {state.message}
+        {state.errors && <ul>{Object.entries(state.errors).map(([key, message]) => <li key={key}><a href={`#${prefix}-${key}`}>{message}</a></li>)}</ul>}
+        {!state.errors && <> Try again, or email <a href={`mailto:${company.email}`}>{company.email}</a>.</>}
+      </div>}
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-name`}>Your name (required)</label>
+        <input id={`${prefix}-name`} name="name" required autoComplete="name" maxLength={150} value={fields.name} onChange={e => set("name", e.target.value)} aria-invalid={Boolean(state.errors?.name)} />
       </div>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="business">Business name</Label>
-        <Input id="business" name="business" required placeholder="Acme Storefront" className="h-11" />
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-email`}>Email (required)</label>
+        <input id={`${prefix}-email`} name="email" required type="email" autoComplete="email" maxLength={254} value={fields.email} onChange={e => set("email", e.target.value)} aria-invalid={Boolean(state.errors?.email)} />
       </div>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" required placeholder="jane@business.com" className="h-11" />
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-location`}>Property city or neighborhood (required)</label>
+        <input id={`${prefix}-location`} name="location" required maxLength={200} placeholder="Charleston, Mount Pleasant, Daniel Island, or nearby" value={fields.location} onChange={e => set("location", e.target.value)} aria-invalid={Boolean(state.errors?.location)} />
       </div>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="phone">Phone</Label>
-        <Input id="phone" name="phone" type="tel" required placeholder="(555) 123-4567" className="h-11" />
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-phone`}>Phone (optional)</label>
+        <input id={`${prefix}-phone`} name="phone" type="tel" autoComplete="tel" maxLength={50} value={fields.phone} onChange={e => set("phone", e.target.value)} />
       </div>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="service">Service needed</Label>
-        <Select name="service">
-          <SelectTrigger id="service" className="h-11 w-full">
-            <SelectValue placeholder="Select a service" />
-          </SelectTrigger>
-          <SelectContent>
-            {services.map((service) => (
-              <SelectItem key={service.slug} value={service.slug}>
-                {service.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-property`}>Property type (optional)</label>
+        <select id={`${prefix}-property`} name="property" value={fields.property} onChange={e => set("property", e.target.value)}>
+          <option value="">Choose a property type</option>
+          <option>Home</option><option>HOA or managed property</option><option>Storefront</option><option>Office</option><option>Other</option>
+        </select>
       </div>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="location">Location</Label>
-        <Select name="location">
-          <SelectTrigger id="location" className="h-11 w-full">
-            <SelectValue placeholder="Select your city" />
-          </SelectTrigger>
-          <SelectContent>
-            {serviceAreas.map((area) => (
-              <SelectItem key={area.slug} value={area.slug}>
-                {area.name}, {area.stateAbbr}
-              </SelectItem>
-            ))}
-            <SelectItem value="other">Nearby / not listed</SelectItem>
-          </SelectContent>
-        </Select>
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-business`}>Company or HOA name (optional)</label>
+        <input id={`${prefix}-business`} name="business" autoComplete="organization" maxLength={200} value={fields.business} onChange={e => set("business", e.target.value)} />
       </div>
-      <div className="flex flex-col gap-2 sm:col-span-2">
-        <Label htmlFor="message">Tell us about your building</Label>
-        <Textarea
-          id="message"
-          name="message"
-          placeholder="Approximate window count, number of stories, how often you'd like service..."
-          className="min-h-28"
-        />
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-service`}>Glass to clean (optional)</label>
+        <select id={`${prefix}-service`} name="service" value={fields.service} onChange={e => set("service", e.target.value)}>
+          <option value="">Choose an option</option><option>Outside</option><option>Inside</option><option>Inside and outside</option><option>Not sure</option>
+        </select>
       </div>
-
-      {state.status === "error" && state.message ? (
-        <div className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive sm:col-span-2">
-          <AlertCircle className="mt-0.5 size-4 shrink-0" />
-          {state.message}
-        </div>
-      ) : null}
-
+      <div className="sg-field">
+        <label htmlFor={`${prefix}-message`}>Property details (optional)</label>
+        <p id={`${prefix}-notes-help`} className="sg-help">Add the address and any windows that are hard to reach. For managed properties, include each address and any access rules.</p>
+        <textarea id={`${prefix}-message`} name="message" rows={4} maxLength={5000} aria-describedby={`${prefix}-notes-help`} value={fields.message} onChange={e => set("message", e.target.value)} />
+      </div>
       <SubmitButton />
     </form>
   );
