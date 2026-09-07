@@ -68,14 +68,14 @@ export function QuoteForm({ defaultLocation = "" }: { defaultLocation?: string }
         <input id={`${prefix}-business`} name="business" autoComplete="organization" maxLength={200} value={fields.business} onChange={e => set("business", e.target.value)} />
       </div>
       <div className="sg-field">
-        <label htmlFor={`${prefix}-service`}>Glass to clean (optional)</label>
+        <label htmlFor={`${prefix}-service`}>Service needed (optional)</label>
         <select id={`${prefix}-service`} name="service" value={fields.service} onChange={e => set("service", e.target.value)}>
-          <option value="">Choose an option</option><option>Outside</option><option>Inside</option><option>Inside and outside</option><option>Not sure</option>
+          <option value="">Choose an option</option><option value="Outside">Exterior window cleaning</option><option value="Inside">Interior window cleaning</option><option value="Inside and outside">Interior and exterior window cleaning</option><option>Pressure washing</option><option>Soft washing</option><option>Multiple services</option><option>Not sure</option>
         </select>
       </div>
       <div className="sg-field">
         <label htmlFor={`${prefix}-message`}>Property details (optional)</label>
-        <p id={`${prefix}-notes-help`} className="sg-help">Add the address and any windows that are hard to reach. For managed properties, include each address and any access rules.</p>
+        <p id={`${prefix}-notes-help`} className="sg-help">Add the address and the windows or exterior surfaces you want cleaned. For managed properties, include each address and any access rules.</p>
         <textarea id={`${prefix}-message`} name="message" rows={4} maxLength={5000} aria-describedby={`${prefix}-notes-help`} value={fields.message} onChange={e => set("message", e.target.value)} />
       </div>
       <SubmitButton />

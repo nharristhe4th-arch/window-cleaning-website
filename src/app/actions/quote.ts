@@ -12,7 +12,7 @@ export type QuoteFormState = {
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const properties = new Set(["Home", "Commercial", "HOA or managed property", "Storefront", "Office", "Other"]);
-const services = new Set(["Outside", "Inside", "Inside and outside", "Not sure"]);
+const services = new Set(["Outside", "Inside", "Inside and outside", "Pressure washing", "Soft washing", "Multiple services", "Not sure"]);
 const failure: QuoteFormState = { status: "error", message: "Your request wasn’t sent. Your details are still here." };
 
 export async function submitQuoteRequest(_previous: QuoteFormState, formData: FormData): Promise<QuoteFormState> {
@@ -48,7 +48,7 @@ export async function submitQuoteRequest(_previous: QuoteFormState, formData: Fo
         `Property city or neighborhood: ${location}`,
         `Property type: ${properties.has(property) ? property : "Not specified"}`,
         `Company or HOA: ${business || "Not supplied"}`,
-        `Glass to clean: ${services.has(service) ? service : "Not specified"}`,
+        `Service requested: ${services.has(service) ? service : "Not specified"}`,
         "", "Property details:", message || "Not supplied",
       ].join("\n"),
     });

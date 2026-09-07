@@ -387,3 +387,8 @@ body { font-family: var(--font-geist-sans), Arial, sans-serif; }
 /* Both photos occupy one camera plane; the after photo is perspective-aligned to the sill. */
 .sg-photo-plane { position: absolute; left: 50%; bottom: 0; width: var(--photo-width, 100%); aspect-ratio: 3 / 4; transform: translateX(-50%); }
 .sg-photo-after { transform-origin: 0 0; transform: var(--photo-align, none); }
+
+.sg-instagram-work { margin-top: 48px; }
+.sg-instagram-work .sg-photo { height: auto; width: 100%; }
+.sg-instagram-source { margin-top: 20px; font-size: 14px !important; }
+.sg-instagram-source a { text-decoration: underline; text-underline-offset: 4px; }

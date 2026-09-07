@@ -55,7 +55,10 @@ export const services = [
     "shortName": "Recurring Maintenance",
     "description": "Recurring maintenance is our preferred way to work. Regular visits help keep buildup under control, so your windows look their best between cleanings.",
     "detail": ""
-  }
+  },
+  { slug: "pressure-washing", name: "Pressure Washing", shortName: "Pressure washing", description: "We also offer pressure washing for exterior surfaces. Take a look at our Charleston concrete and brick-step results below, and include the areas you want cleaned in your quote request.", detail: "" },
+  { slug: "soft-washing", name: "Soft Washing", shortName: "Soft washing", description: "Ask about soft washing for exterior surfaces that need a lower-pressure approach. Tell us about the surface and the buildup so we can discuss the right method for your property.", detail: "" }
+
 ] as const;
 
 export const serviceAreas = [

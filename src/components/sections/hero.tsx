@@ -61,7 +61,7 @@ export function Hero() {
       <div className="sg-clean-copy">
         <span className="sg-eyebrow">Squeegee Guys · Charleston, SC</span>
         <h1 id="home-heading">Window Cleaning<br /><span>Done Right.</span></h1>
-        <p>Professional window cleaning for homes and businesses across the greater Charleston region, from everyday residential care to storefronts, offices, and properties under your management.</p>
+        <p>Professional window cleaning for homes and businesses across the greater Charleston region, from everyday residential care to storefronts, offices, and properties under your management. Pressure washing and soft washing are available too.</p>
         <div className="sg-clean-categories" aria-label="Our services"><span>Residential</span><span>Commercial</span><span>Property management</span></div>
         <Link className="sg-cta" href="/contact#quote">Get a free quote <span aria-hidden="true">↗</span></Link>
         <p className="sg-clean-location">Charleston · Mount Pleasant · Daniel Island</p>
