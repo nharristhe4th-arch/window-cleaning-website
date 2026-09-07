@@ -28,7 +28,7 @@ export async function submitQuoteRequest(_previous: QuoteFormState, formData: Fo
   const errors: NonNullable<QuoteFormState["errors"]> = {};
   if (!name || name.length > 150) errors.name = "Enter your name.";
   if (!EMAIL_PATTERN.test(email) || email.length > 254) errors.email = "Enter an email address I can reply to.";
-  if (!location || location.length > 200) errors.location = "Enter the property’s city or neighborhood.";
+  if (!location || location.length > 200) errors.location = "Choose your town.";
   if (Object.keys(errors).length) return { status: "error", message: "Check the highlighted details.", errors };
   if (business.length > 200 || phone.length > 50 || message.length > 5000) return { status: "error", message: "One of your answers is too long. Shorten it and try again." };
   if (!process.env.RESEND_API_KEY) {
@@ -42,7 +42,7 @@ export async function submitQuoteRequest(_previous: QuoteFormState, formData: Fo
       from: process.env.QUOTE_FROM_EMAIL || `${company.name} Website <onboarding@resend.dev>`,
       to: [company.email],
       replyTo: email,
-      subject: `Window-cleaning quote: ${(business || name).replace(/[\r\n]+/g, " ")}`,
+      subject: `Cleaning quote: ${(business || name).replace(/[\r\n]+/g, " ")}`,
       text: [
         `Name: ${name}`, `Email: ${email}`, `Phone: ${phone || "Not supplied"}`,
         `Property city or neighborhood: ${location}`,

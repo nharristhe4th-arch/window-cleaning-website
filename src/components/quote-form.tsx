@@ -3,7 +3,7 @@
 
 import { useActionState, useEffect, useId, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
-import { company } from "@/lib/site-data";
+import { company, serviceAreas } from "@/lib/site-data";
 import { submitQuoteRequest, type QuoteFormState } from "@/app/actions/quote";
 
 function SubmitButton() {
@@ -15,7 +15,7 @@ function SubmitButton() {
 
 export function QuoteForm({ defaultLocation = "" }: { defaultLocation?: string }) {
   const [state, action] = useActionState<QuoteFormState, FormData>(submitQuoteRequest, { status: "idle" });
-  const [fields, setFields] = useState({ name: "", business: "", email: "", phone: "", property: "", service: "", location: defaultLocation, message: "" });
+  const [fields, setFields] = useState({ name: "", email: "", phone: "", service: "", location: defaultLocation, message: "" });
   const prefix = useId();
   const errorRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
@@ -49,23 +49,16 @@ export function QuoteForm({ defaultLocation = "" }: { defaultLocation?: string }
         <input id={`${prefix}-email`} name="email" required type="email" autoComplete="email" maxLength={254} value={fields.email} onChange={e => set("email", e.target.value)} aria-invalid={Boolean(state.errors?.email)} />
       </div>
       <div className="sg-field">
-        <label htmlFor={`${prefix}-location`}>Property city or neighborhood (required)</label>
-        <input id={`${prefix}-location`} name="location" required maxLength={200} placeholder="Charleston, Mount Pleasant, Daniel Island, or nearby" value={fields.location} onChange={e => set("location", e.target.value)} aria-invalid={Boolean(state.errors?.location)} />
+        <label htmlFor={`${prefix}-location`}>Town (required)</label>
+        <select id={`${prefix}-location`} name="location" required value={fields.location} onChange={e => set("location", e.target.value)} aria-invalid={Boolean(state.errors?.location)}>
+          <option value="">Choose your town</option>
+          {serviceAreas.map(area => <option key={area.slug} value={area.name}>{area.name}</option>)}
+          <option value="Other nearby area">Other nearby area</option>
+        </select>
       </div>
       <div className="sg-field">
         <label htmlFor={`${prefix}-phone`}>Phone (optional)</label>
         <input id={`${prefix}-phone`} name="phone" type="tel" autoComplete="tel" maxLength={50} value={fields.phone} onChange={e => set("phone", e.target.value)} />
-      </div>
-      <div className="sg-field">
-        <label htmlFor={`${prefix}-property`}>Property type (optional)</label>
-        <select id={`${prefix}-property`} name="property" value={fields.property} onChange={e => set("property", e.target.value)}>
-          <option value="">Choose a property type</option>
-          <option value="Home">Residential</option><option>Commercial</option><option value="HOA or managed property">Property management / HOA</option><option>Storefront</option><option>Office</option><option>Other</option>
-        </select>
-      </div>
-      <div className="sg-field">
-        <label htmlFor={`${prefix}-business`}>Company or HOA name (optional)</label>
-        <input id={`${prefix}-business`} name="business" autoComplete="organization" maxLength={200} value={fields.business} onChange={e => set("business", e.target.value)} />
       </div>
       <div className="sg-field">
         <label htmlFor={`${prefix}-service`}>Service needed (optional)</label>
@@ -74,9 +67,9 @@ export function QuoteForm({ defaultLocation = "" }: { defaultLocation?: string }
         </select>
       </div>
       <div className="sg-field">
-        <label htmlFor={`${prefix}-message`}>Property details (optional)</label>
-        <p id={`${prefix}-notes-help`} className="sg-help">Add the address and the windows or exterior surfaces you want cleaned. For managed properties, include each address and any access rules.</p>
-        <textarea id={`${prefix}-message`} name="message" rows={4} maxLength={5000} aria-describedby={`${prefix}-notes-help`} value={fields.message} onChange={e => set("message", e.target.value)} />
+        <label htmlFor={`${prefix}-message`}>Anything else? (optional)</label>
+        <p id={`${prefix}-notes-help`} className="sg-help">Add any details you’d like us to know.</p>
+        <textarea id={`${prefix}-message`} name="message" rows={2} maxLength={5000} aria-describedby={`${prefix}-notes-help`} value={fields.message} onChange={e => set("message", e.target.value)} />
       </div>
       <SubmitButton />
     </form>

@@ -2,7 +2,7 @@ export const company = {
   name: "Squeegee Guys",
   phone: "(317) 764-1211",
   phoneHref: "tel:+13177641211",
-  email: "nharristhe4th@gmail.com",
+  email: "squeegeeguyswindows@gmail.com",
   quoteUrl: "/contact#quote",
 } as const;
 
