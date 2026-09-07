@@ -9,30 +9,126 @@ export const company = {
 export const nav = [
   { label: "Services", href: "/#services" },
   { label: "Our work", href: "/#our-work" },
-  { label: "About Nick", href: "/#about-nick" },
+  { label: "About us", href: "/#about-nick" },
   { label: "Service areas", href: "/service-areas" },
 ] as const;
 
 export const services = [
-  { slug: "residential-window-cleaning", name: "Home window cleaning", shortName: "Homes", description: "Salt spray can leave a film on peninsula windows. Pollen season brings another round of buildup. Tell me if you want inside, outside, or both.", detail: "Have a historic single-house window that sticks? Mention it in your request." },
-  { slug: "property-management-window-cleaning", name: "Property managers & HOAs", shortName: "Property managers & HOAs", description: "Manage property in Charleston, Mount Pleasant, or Daniel Island? Send the addresses and the glass you want covered.", detail: "For an HOA, list shared windows separately from residents’ windows. Include gate access and the person who approves the work." },
-  { slug: "commercial-window-cleaning", name: "Office window cleaning", shortName: "Offices", description: "For a Charleston-area office, tell me which rooms need interior access. Include office hours and any tenant rules in your request.", detail: "List the windows that need cleaning and the contact who can arrange access." },
-  { slug: "storefront-window-cleaning", name: "Storefront window cleaning", shortName: "Storefronts", description: "For your Charleston or Mount Pleasant storefront, include the shop address. Tell me which door glass and display windows need cleaning.", detail: "Include your opening hours when asking about a cleaning date." },
-  { slug: "realtor-pre-listing-window-cleaning", name: "Before listing photos", shortName: "Before listing photos", description: "Have listing photos booked in the Charleston area? Include the photo date in your request.", detail: "Tell me which windows will be in the photos and whether you need interior glass cleaned." },
-  { slug: "recurring-maintenance", name: "Repeat window cleaning", shortName: "Repeat visits", description: "Salt exposure and pollen can change how often glass needs cleaning. Tell me what you notice between visits.", detail: "Include how often you would like service when requesting a quote." },
+  {
+    "slug": "residential-window-cleaning",
+    "name": "Residential Window Cleaning",
+    "shortName": "Residential",
+    "description": "We help homeowners keep their windows streak-free inside and out, from single visits to seasonal cleanings. We work around your schedule and take care with screens, sills, and surrounding landscaping.",
+    "detail": ""
+  },
+  {
+    "slug": "commercial-window-cleaning",
+    "name": "Commercial Window Cleaning",
+    "shortName": "Commercial",
+    "description": "We provide full interior and exterior window cleaning for commercial buildings, delivered on a one-time or recurring basis. We work around your operating hours and tenant schedules to minimize disruption to your business.",
+    "detail": ""
+  },
+  {
+    "slug": "property-management-window-cleaning",
+    "name": "Property Management Window Cleaning",
+    "shortName": "Property Management",
+    "description": "We partner with property managers to maintain glass across single properties or entire portfolios. We coordinate scheduling with on-site staff to keep every building under your management looking its best.",
+    "detail": ""
+  },
+  {
+    "slug": "storefront-window-cleaning",
+    "name": "Storefront Window Cleaning",
+    "shortName": "Storefront",
+    "description": "Your storefront windows are the first thing customers see. We offer recurring storefront cleaning to keep entryway glass and display windows clear between visits.",
+    "detail": ""
+  },
+  {
+    "slug": "realtor-pre-listing-window-cleaning",
+    "name": "Realtor / Pre-Listing Window Cleaning",
+    "shortName": "Pre-Listing",
+    "description": "First impressions sell properties. We work with realtors and property owners to get glass spotless before listing photos or walkthroughs.",
+    "detail": ""
+  },
+  {
+    "slug": "recurring-maintenance",
+    "name": "Recurring Maintenance",
+    "shortName": "Recurring Maintenance",
+    "description": "Recurring maintenance is our preferred way to work. Regular visits help keep buildup under control, so your windows look their best between cleanings.",
+    "detail": ""
+  }
 ] as const;
 
 export const serviceAreas = [
-  { slug: "charleston", name: "Charleston", state: "South Carolina", stateAbbr: "SC", heading: "Window cleaning in Charleston, SC", title: "Charleston Home & HOA Window Cleaning | Squeegee Guys", description: "Charleston window cleaning for homes, HOAs, and managed properties. Tell Nick about salt film, pollen, or historic windows. Get a free quote.", intro: "Salt film on peninsula glass? Pollen around the screens? Tell me what you see and which windows need cleaning.", focusTitle: "Historic windows and managed properties", paragraphs: ["For a Charleston single house, mention stuck windows or loose glazing. Include any access limits before asking for a quote.", "Managing an HOA or rental? List shared glass separately from residents’ windows. Include the address and the contact who can arrange access."] },
-  { slug: "mount-pleasant", name: "Mount Pleasant", state: "South Carolina", stateAbbr: "SC", heading: "Window cleaning in Mount Pleasant, SC", title: "Window Cleaning Mount Pleasant, SC | Squeegee Guys", description: "Window cleaning for Mount Pleasant homes and managed properties. Request a free quote from Nick at Squeegee Guys for interior or exterior glass.", intro: "I clean windows for Mount Pleasant homeowners and property managers. Include the property address and tell me which glass needs cleaning.", focusTitle: "Tell me about the glass and access", paragraphs: ["Near salt water? Mention film on the outside glass. For a storefront, list door glass separately from display windows.", "For an HOA, send the shared-window list and any gate instructions. Include the contact who can arrange access."] },
-  { slug: "daniel-island", name: "Daniel Island", state: "South Carolina", stateAbbr: "SC", heading: "Window cleaning on Daniel Island, SC", title: "Window Cleaning Daniel Island, SC | Squeegee Guys", description: "Get a free window-cleaning quote for your Daniel Island home or managed property. Tell Nick about interior glass, exterior windows, and access.", intro: "For your Daniel Island home or a property you manage. Tell me which windows need cleaning and how I can reach them.", focusTitle: "Home windows and HOA common areas", paragraphs: ["For your home, mention upper-floor glass and windows that will not open. For an HOA, separate shared windows from work inside residents’ homes.", "Include gate or parking instructions with your address. For managed properties, add the person who approves the work."] },
+  {
+    "slug": "charleston",
+    "name": "Charleston",
+    "state": "South Carolina",
+    "stateAbbr": "SC",
+    "heading": "Window cleaning in Charleston, SC",
+    "title": "Window Cleaning Charleston, SC | Squeegee Guys",
+    "description": "Residential, commercial, and property management window cleaning in Charleston, SC. Get a free quote from Squeegee Guys.",
+    "intro": "Charleston's coastal air, salt, and humidity are tough on glass. We provide residential, commercial, and property management window cleaning throughout Charleston.",
+    "focusTitle": "Window cleaning for Charleston properties",
+    "paragraphs": [
+      "From everyday residential care to storefronts and offices, we tailor each service to the property. For historic single-house windows, let us know about older glazing or access restrictions.",
+      "We work with property managers on shared windows and individual buildings. Include the scope of work and any tenant access requirements in your quote request."
+    ]
+  },
+  {
+    "slug": "mount-pleasant",
+    "name": "Mount Pleasant",
+    "state": "South Carolina",
+    "stateAbbr": "SC",
+    "heading": "Window cleaning in Mount Pleasant, SC",
+    "title": "Window Cleaning Mount Pleasant, SC | Squeegee Guys",
+    "description": "Residential, commercial, and property management window cleaning in Mount Pleasant, SC. Get a free quote from Squeegee Guys.",
+    "intro": "From homes to the restaurant and retail scene along Coleman Boulevard and Shem Creek, clean windows make a difference in Mount Pleasant. We offer residential, commercial, and property management window cleaning.",
+    "focusTitle": "Service that fits your property",
+    "paragraphs": [
+      "We help homeowners keep their windows streak-free inside and out, from single visits to seasonal cleanings.",
+      "For storefronts, offices, and managed properties, we coordinate the work around operating hours and access. Ask about recurring service for glass exposed to salt-air buildup."
+    ]
+  },
+  {
+    "slug": "daniel-island",
+    "name": "Daniel Island",
+    "state": "South Carolina",
+    "stateAbbr": "SC",
+    "heading": "Window cleaning on Daniel Island, SC",
+    "title": "Window Cleaning Daniel Island, SC | Squeegee Guys",
+    "description": "Residential, commercial, and property management window cleaning on Daniel Island, SC. Get a free quote from Squeegee Guys.",
+    "intro": "Squeegee Guys provides residential, commercial, and property management window cleaning on Daniel Island. From your home's interior glass to a building you manage, we tailor the work to your property.",
+    "focusTitle": "Homes, businesses, and managed properties",
+    "paragraphs": [
+      "Choose interior or exterior cleaning, or include both in your quote. Let us know about upper-floor windows and any access requirements.",
+      "For commercial properties and HOAs, we coordinate with the person who manages access. Include shared windows and any tenant scheduling needs in your request."
+    ]
+  }
 ] as const;
 
 export const faqs = [
-  { question: "Do you cover my address?", answer: "I work in Charleston, Mount Pleasant, and Daniel Island. Nearby? Include your address in your quote request." },
-  { question: "What should I include for a quote?", answer: "Start with the property’s city and the glass you want cleaned. Inside, outside, or both? Mention upper-floor windows or access limits. An exact window count is optional." },
-  { question: "Can I request a quote for my home?", answer: "Yes. Choose Home in the form. A company name is optional, and you do not need one to submit a request." },
-  { question: "What should a property manager or HOA send?", answer: "Include each property address and the glass you want covered. List shared windows separately from residents’ windows. Add any gate rules and the person who approves the work." },
-  { question: "What about hard-water spots or older windows?", answer: "Mention spots that remain after washing. For historic single-house windows, flag stuck sashes or loose glazing. Include these details before asking about the work and price." },
-  { question: "Does sending the form book an appointment?", answer: "No. The form sends a quote request. Include a preferred date or a listing-photo deadline in the notes." },
+  {
+    "question": "What types of properties do you clean?",
+    "answer": "We provide residential, commercial, and property management window cleaning, including storefronts, offices, and HOA common areas."
+  },
+  {
+    "question": "Do you clean inside and outside?",
+    "answer": "Yes, we offer both interior and exterior window cleaning. Many customers choose exterior-only recurring service with interior cleanings scheduled less frequently, but we\u2019re flexible based on what you need."
+  },
+  {
+    "question": "Do you offer recurring service?",
+    "answer": "Yes. We offer one-time cleaning and recurring maintenance. We\u2019ll discuss a schedule that fits your property when preparing your quote."
+  },
+  {
+    "question": "How do pricing and estimates work?",
+    "answer": "Every property is different, so we provide a free, no-obligation quote based on the size of your building, window count, accessibility, and how often you\u2019d like service."
+  },
+  {
+    "question": "Do businesses need to be open during cleaning?",
+    "answer": "Not necessarily. We can typically clean exterior windows without interruption to your business, and we\u2019ll coordinate interior access at a time that\u2019s convenient for your team."
+  },
+  {
+    "question": "Which areas do you serve?",
+    "answer": "We serve Charleston and surrounding areas, including Mount Pleasant and Daniel Island. Include your address in your quote request so we can confirm coverage."
+  }
 ] as const;

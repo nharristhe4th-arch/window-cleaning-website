@@ -7,7 +7,7 @@ import { company, serviceAreas } from "@/lib/site-data";
 import { siteUrl } from "@/lib/site-url";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
 const title = "Window Cleaning Charleston, SC | Squeegee Guys";
-const description = "Window cleaning in Charleston, Mount Pleasant, and Daniel Island. Get a free quote for your home or a property you manage. Owner-operated by Nick Harris.";
+const description = "Residential, commercial, and property management window cleaning in Charleston, Mount Pleasant, and Daniel Island. Get a free quote from Squeegee Guys.";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: title, template: "%s | Squeegee Guys" }, description,

@@ -60,7 +60,7 @@ export function QuoteForm({ defaultLocation = "" }: { defaultLocation?: string }
         <label htmlFor={`${prefix}-property`}>Property type (optional)</label>
         <select id={`${prefix}-property`} name="property" value={fields.property} onChange={e => set("property", e.target.value)}>
           <option value="">Choose a property type</option>
-          <option>Home</option><option>HOA or managed property</option><option>Storefront</option><option>Office</option><option>Other</option>
+          <option value="Home">Residential</option><option>Commercial</option><option value="HOA or managed property">Property management / HOA</option><option>Storefront</option><option>Office</option><option>Other</option>
         </select>
       </div>
       <div className="sg-field">

@@ -11,7 +11,7 @@ export type QuoteFormState = {
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const properties = new Set(["Home", "HOA or managed property", "Storefront", "Office", "Other"]);
+const properties = new Set(["Home", "Commercial", "HOA or managed property", "Storefront", "Office", "Other"]);
 const services = new Set(["Outside", "Inside", "Inside and outside", "Not sure"]);
 const failure: QuoteFormState = { status: "error", message: "Your request wasn’t sent. Your details are still here." };
 
