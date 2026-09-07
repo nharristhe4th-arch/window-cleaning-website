@@ -16,49 +16,32 @@ export const nav = [
 export const services = [
   {
     "slug": "residential-window-cleaning",
-    "name": "Residential Window Cleaning",
-    "shortName": "Residential",
-    "description": "We help homeowners keep their windows streak-free inside and out, from single visits to seasonal cleanings. We work around your schedule and take care with screens, sills, and surrounding landscaping.",
+    "name": "Window Cleaning",
+    "shortName": "Window cleaning",
+    "description": "Interior and exterior window cleaning for homes and commercial properties, including offices and storefronts. We offer one-time visits and recurring service, scheduled around your home or business.",
     "detail": ""
   },
   {
-    "slug": "commercial-window-cleaning",
-    "name": "Commercial Window Cleaning",
-    "shortName": "Commercial",
-    "description": "We provide full interior and exterior window cleaning for commercial buildings, delivered on a one-time or recurring basis. We work around your operating hours and tenant schedules to minimize disruption to your business.",
+    "slug": "pressure-washing",
+    "name": "Pressure Washing",
+    "shortName": "Pressure washing",
+    "description": "Pressure washing for residential and commercial properties. From the concrete around your home to the entrance of your business, we\u2019ll discuss the surfaces you need cleaned and coordinate access before the job.",
+    "detail": ""
+  },
+  {
+    "slug": "soft-washing",
+    "name": "Soft Washing",
+    "shortName": "Soft washing",
+    "description": "Soft washing for exterior surfaces that need a lower-pressure approach. Tell us about the surface and the buildup so we can discuss the right method for your property.",
     "detail": ""
   },
   {
     "slug": "property-management-window-cleaning",
-    "name": "Property Management Window Cleaning",
-    "shortName": "Property Management",
-    "description": "We partner with property managers to maintain glass across single properties or entire portfolios. We coordinate scheduling with on-site staff to keep every building under your management looking its best.",
+    "name": "Property Management & Realtor Services",
+    "shortName": "Property management & realtors",
+    "description": "We work with property managers and realtors on ongoing cleaning and preparation for listing photos or showings. Coordinate window cleaning, pressure washing, or soft washing for a single property or a portfolio.",
     "detail": ""
-  },
-  {
-    "slug": "storefront-window-cleaning",
-    "name": "Storefront Window Cleaning",
-    "shortName": "Storefront",
-    "description": "Your storefront windows are the first thing customers see. We offer recurring storefront cleaning to keep entryway glass and display windows clear between visits.",
-    "detail": ""
-  },
-  {
-    "slug": "realtor-pre-listing-window-cleaning",
-    "name": "Realtor / Pre-Listing Window Cleaning",
-    "shortName": "Pre-Listing",
-    "description": "First impressions sell properties. We work with realtors and property owners to get glass spotless before listing photos or walkthroughs.",
-    "detail": ""
-  },
-  {
-    "slug": "recurring-maintenance",
-    "name": "Recurring Maintenance",
-    "shortName": "Recurring Maintenance",
-    "description": "Recurring maintenance is our preferred way to work. Regular visits help keep buildup under control, so your windows look their best between cleanings.",
-    "detail": ""
-  },
-  { slug: "pressure-washing", name: "Pressure Washing", shortName: "Pressure washing", description: "We also offer pressure washing for exterior surfaces. Take a look at our Charleston concrete and brick-step results below, and include the areas you want cleaned in your quote request.", detail: "" },
-  { slug: "soft-washing", name: "Soft Washing", shortName: "Soft washing", description: "Ask about soft washing for exterior surfaces that need a lower-pressure approach. Tell us about the surface and the buildup so we can discuss the right method for your property.", detail: "" }
-
+  }
 ] as const;
 
 export const serviceAreas = [

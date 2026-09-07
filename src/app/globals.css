@@ -389,6 +389,6 @@ body { font-family: var(--font-geist-sans), Arial, sans-serif; }
 .sg-photo-after { transform-origin: 0 0; transform: var(--photo-align, none); }
 
 .sg-instagram-work { margin-top: 48px; }
-.sg-instagram-work .sg-photo { height: auto; width: 100%; }
+.sg-instagram-work .sg-photo { height: auto; width: 100%; aspect-ratio: auto; object-fit: contain; }
 .sg-instagram-source { margin-top: 20px; font-size: 14px !important; }
 .sg-instagram-source a { text-decoration: underline; text-underline-offset: 4px; }
