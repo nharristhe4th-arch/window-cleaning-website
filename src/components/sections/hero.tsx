@@ -16,6 +16,16 @@ export function Hero() {
     let frame = 0;
     const paint = () => {
       frame = 0;
+      // Match the after photograph to the before photograph's sill/frame plane.
+      // Coefficients were measured from 46 matching structural points, excluding glass reflections.
+      const photoWidth = Math.max(pane.clientWidth, pane.clientHeight * .75);
+      const scale = photoWidth / 1350;
+      pane.style.setProperty("--photo-width", `${photoWidth}px`);
+      pane.style.setProperty("--photo-align", `matrix3d(
+        1.527571847, .098256310, 0, ${.000102369481 / scale},
+        .001572361, 1.407345760, 0, ${-.000054834010 / scale},
+        0, 0, 1, 0,
+        ${-292.353853600 * scale}, ${-454.300042832 * scale}, 0, 1)`);
       root.classList.toggle("is-animated", !reduced.matches);
       if (reduced.matches) return;
       const desktop = window.innerWidth >= 900 && window.innerHeight >= 700;
@@ -32,10 +42,13 @@ export function Hero() {
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(paint); };
     paint();
+    const observer = new ResizeObserver(schedule);
+    observer.observe(pane);
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
     reduced.addEventListener("change", schedule);
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
@@ -55,9 +68,9 @@ export function Hero() {
       </div>
       <div className="sg-window-demo">
         <div ref={glass} className="sg-window" role="img" aria-label="Before and after window cleaning, revealed as you scroll">
-          <Image src="/images/work/window-after.webp" alt="" fill preload sizes="(max-width: 899px) 100vw, 520px" className="sg-window-view" />
+          <div className="sg-photo-plane"><Image src="/images/work/window-after.webp" alt="" fill preload sizes="(max-width: 899px) 100vw, 520px" className="sg-window-view sg-photo-after" /></div>
           <div className="sg-window-dirt">
-            <Image src="/images/work/window-before.webp" alt="" fill preload sizes="(max-width: 899px) 100vw, 520px" className="sg-window-view" />
+            <div className="sg-photo-plane"><Image src="/images/work/window-before.webp" alt="" fill preload sizes="(max-width: 899px) 100vw, 520px" className="sg-window-view" /></div>
           </div>
           <div className="sg-squeegee"><div className="sg-squeegee-blade" /><div className="sg-squeegee-neck" /><div className="sg-squeegee-handle" /></div>
         </div>
